@@ -9,9 +9,9 @@ class NotCorrectReason(mess: String) : RuntimeException(mess)
 class CRUD<T : Item>() {
 
     fun create(item: T): T {
-        item.id = ++WallService.lastItemId
-        if (WallService.foundById(item.id!!)) {
+        if (WallService.foundById(item.postId!!)) {
 //            WallService.items += item.copy(id = ++WallService.lastItemId)
+            item.id = ++WallService.lastItemId
             WallService.items += item
             return WallService.items.last() as T
         } else throw PostNotFoundException("Post with id = $item.id was not found")

@@ -52,9 +52,9 @@ object WallService {
         }
     }
 
-    fun foundById(commentPostId: Int): Boolean {
+    fun foundById(PostId: Int): Boolean {
         for (post in posts) {
-            if (post.id == commentPostId) {
+            if (post.id == PostId) {
                 return true
             }
         }
